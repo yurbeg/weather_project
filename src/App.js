@@ -14,7 +14,8 @@ function App() {
   return (
 
     <div className="App">
-       <div className="divInput">
+      
+         <div className="divInput">
         <Form
           form={form}
           onFinish={({ city }) => {
@@ -27,9 +28,10 @@ function App() {
           </Form.Item>
         </Form>
       </div>
+      
       <Routes>
         <Route path='/' element= { <Main city={city}/> }> </Route>  
-        <Route path = {`${ROUTE_CONSTANTS.CARD}/:day`} element={<HourlyData city={city}  />} />
+        <Route path = {`${ROUTE_CONSTANTS.CARD}/:day`} element={<HourlyData city={city}  />}  />
       </Routes> 
     </div>
   );

@@ -24,7 +24,6 @@ const Main = ({ city }) => {
   }, [city]);
   return (
     <div>
-     
       <div className="main__container">
         {data.map((dataObj, i) => {
           const currentWeekDay = new Date(dataObj.dt_txt).getDay();

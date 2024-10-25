@@ -8,7 +8,7 @@ export const ROUTE_CONSTANTS = {
   MAIN: "/",
   CARD: "/fullDay",
 };
-
+export let dataInfo 
 export const handleRequest = (callBack,city) => {
   if(!city){
     city = "Yerevan"
@@ -21,11 +21,12 @@ export const handleRequest = (callBack,city) => {
       return res.json();
     })
     .then((data) => {
+      dataInfo = data
       callBack(data);
     })
     .catch((err) => {
       console.error(err);
       alert("Please try again.");
     })
-    .finally(() => {    });
+    .finally(() => {});
 };
