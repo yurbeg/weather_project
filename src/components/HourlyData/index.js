@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
-import { CONSTANTS, ROUTE_CONSTANTS,dataInfo } from "../core/constants";
+import { CONSTANTS, ROUTE_CONSTANTS,handleRequest } from "../core/constants";
 import Card from "../Card";
 import { useParams, Link } from "react-router-dom";
 import { Button } from "antd";
 import "./index.css";
-const HourlyData = ({city}) => {
+const HourlyData = ({ city }) => {
   const { day } = useParams();
   const [data, setData] = useState([]);  
   useEffect(() => {
-    if(!dataInfo){
-      return
-    }
+    handleRequest((data)=>{
       setData(
-        dataInfo.list.filter((dataObj) => {
+          data.list.filter((dataObj) => {
           const date = new Date(dataObj.dt_txt);
           return date.getDay() === +day;
         })
       );
+      
+    },city)
   }, [day,city]);
   return (
     <div>
