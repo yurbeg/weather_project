@@ -33,7 +33,7 @@ const Main = ({ city }) => {
               weekDay={CONSTANTS.weekdays[currentWeekDay]}
               imgSrc={dataObj.weather[0].icon}
               temp={Math.round(dataObj.main.temp)}
-              time={dataObj.dt_txt.split(" ")[1]}
+              time="⛅"
               path={`${ROUTE_CONSTANTS.CARD}/${currentWeekDay}`}
             />
           );

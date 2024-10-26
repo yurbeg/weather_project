@@ -6,3 +6,9 @@
     margin-bottom: 20px;
     width: 100%;
 }
+
+@media screen and (max-width: 1650px) {
+    .hourly__container{
+        flex-wrap: wrap;
+    }
+  }

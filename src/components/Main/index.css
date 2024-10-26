@@ -1,4 +1,5 @@
 .main__container{
+    width: 100%;
     display: flex;
     text-align: center;
     justify-content: space-around;
@@ -8,3 +9,9 @@
     margin: 20px auto;
     width: 60%;
 }
+
+@media screen and (max-width: 1320px) {
+    .main__container{
+        flex-wrap: wrap;
+    }
+  }
